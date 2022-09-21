@@ -1,17 +1,22 @@
-from operator import truediv
+from operator import __truediv__
 from random import randint
 
-liv = randint(3,10)
+
+
 tau = 0
 spade = 0
 armer = 2
 bein = 2
 brødskive = 0
-
-
-
+liv = randint(3,10)
+    
+    
 def start():
-    global liv, tau, spade, armer, bein
+
+    global spade, armer, bein, brødskive, liv
+
+    if liv < 1:
+      liv = randint(3,10)
    
     navn = input("Hei, hva heter du? ")    
     print("Velkommen", navn) 
@@ -198,11 +203,7 @@ def rosabaer():
 
 def hull():
 
-    global liv
-    global tau
-    global spade
-    global armer 
-    global bein
+    global liv, tau, spade, armer, bein
 
     print("Du har", liv, "liv,", spade, "spader og", tau, "tau")
 
@@ -222,12 +223,7 @@ def hull():
 
 def tau_():
 
-    global liv
-    global tau
-    global spade
-    global armer 
-    global bein
-
+    global liv, tau, spade, armer, bein
 
     print("Vil du bruke tauet for å komme deg opp av hullet?")
 
@@ -541,7 +537,8 @@ def bod():
       kjeller()
 
     elif valg_bod == "purpur":
-      sking_bod = False 
+      
+      asking_bod = False 
       trapp()
 
     else:
